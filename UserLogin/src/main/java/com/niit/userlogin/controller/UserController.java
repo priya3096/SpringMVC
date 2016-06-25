@@ -16,7 +16,6 @@ public class UserController {
 	@RequestMapping("/isValidUser")
 	public ModelAndView show( @RequestParam(value="name")String name, @RequestParam(value="password")String password)
 	{
-		System.out.println("controller");
 		ModelAndView mv;
 		String message;
 		if(adminDAO.isValidAdmin(name, password))

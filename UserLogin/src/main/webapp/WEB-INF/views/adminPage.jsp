@@ -9,8 +9,8 @@
 <body>
 	<center>
 		<h2>Welcome Admin !!!</h2>
-		<a href="#">Products</a><br>
-		 <a href="#">Suppliers</a>
+		<a href="getProducts">Products</a><br>
+		<a href="getSuppliers">Suppliers</a>
 	</center>
 
 </body>
