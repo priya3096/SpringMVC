@@ -23,6 +23,10 @@
 	
 	
 	<form name='f' action="<c:url value='j_spring_security_check'/>" method='Post'>
+	 <c:if test="${not empty error}">
+                    <div class="error" style="color: #ff0000;">${error}</div>
+                </c:if>
+	
 		<table>
 			<tr>
 				<td>User:</td>
