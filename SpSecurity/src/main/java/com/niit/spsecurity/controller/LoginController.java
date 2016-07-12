@@ -30,7 +30,7 @@ public class LoginController {
     @RequestMapping(value="/loginfailed", method = RequestMethod.GET)
     public String loginError(ModelMap model) {
     
-    	model.addAttribute("error", "true");
+    	model.addAttribute("error", "invalid");
     	return "login";
      
     }
@@ -43,7 +43,7 @@ public class LoginController {
     @RequestMapping(value="/*", method = RequestMethod.GET)
     public String home(ModelMap model) {
     
-    	return "home";
+    	return "login";
      
     }
  

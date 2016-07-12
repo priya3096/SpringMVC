@@ -9,7 +9,8 @@
 </head>
 <body>
 <center>
-	<h1>Welcome : ${username}!!</h1>
+	<h1>You are welcome to the adminpage: ${username}!!</h1>
+	<hr>
 	
 	<a href="<c:url value="/j_spring_security_Logout" />">Logout</a>
 </center>
