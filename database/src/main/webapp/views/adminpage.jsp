@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>AdminPage</title>
+<%@include file="/includes/Head.jsp" %>
+</head>
+<body background="resources/images/images.jpg">
+<%@include file="/includes/loggedIn.jsp" %>
+<center>
+<h1>Welcome Admin!!</h1>
+<h2><a href="genres">genres</a></h2>
+<b><hr></b>
+<br><br>
+<form method="POST" action="uploadFile" enctype="multipart/form-data">
+<div>
+		File to upload: <input type="file" name="file"><br>
+		Name: <input type="text" name="name"><button class="btn btn-primary"> Upload</button> 		
+
+</div>
+	</form>	
+	<br><br>
+	<b>${message} !! </b>
+<b><hr></b>
+
+</center>
+</body>
+</html>
