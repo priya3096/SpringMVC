@@ -55,7 +55,7 @@ public class UserController {
 		public @ResponseBody ModelAndView handleFileUpload(
 	            @RequestParam("file") MultipartFile file){
 	        String name = file.getOriginalFilename();
-	       String path = "C:/Users/Manoj/Documents/GitHub/Practice-java/database/src/main/resources/image";
+	       String path = "C:/Users/Manoj/Documents/GitHub/Practice-java/database/src/main/resources/images";
 	       String message;
 	       ModelAndView mvv;
 	        if (!file.isEmpty()) {
@@ -72,8 +72,8 @@ public class UserController {
 	                        new BufferedOutputStream(new FileOutputStream(new File(path+"\\"+name)));
 	                stream.write(bytes);
 	                stream.close();
-	                System.out.println( "You successfully uploaded " + name + " into " + name + "-uploaded !");
-	                message="You successfully uploaded " + name + " into " + name + "-uploaded !";
+	                System.out.println( "You successfully uploaded " + name + " into the resources folder !");
+	                message="You successfully uploaded " + name + " into resources folder !";
 	                
 	            } catch (Exception e) {
 	            	System.out.println( "You failed to upload " + name + " => " + e.getMessage());

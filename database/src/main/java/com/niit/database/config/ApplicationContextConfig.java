@@ -14,9 +14,7 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.niit.database.dao.GenreDAO;
-import com.niit.database.dao.GenreDAOImpl;
-import com.niit.database.model.Genre;
+import com.niit.database.model.Book;
 import com.niit.database.model.User;
 
 
@@ -41,7 +39,6 @@ public class ApplicationContextConfig {
     
     private Properties getHibernateProperties() {
     	Properties properties = new Properties();
-    	
     	properties.put("hibernate.show_sql", "true");
     	properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
     	properties.put("hibernate.hbm2ddl.auto", "update");
@@ -55,7 +52,8 @@ public class ApplicationContextConfig {
     	LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
     	sessionBuilder.addProperties(getHibernateProperties());
     	sessionBuilder.addAnnotatedClasses(User.class);
-    	sessionBuilder.addAnnotatedClasses(Genre.class);
+    	sessionBuilder.addAnnotatedClasses(Book.class);
+    	
     	return sessionBuilder.buildSessionFactory();
     }
     
@@ -68,11 +66,6 @@ public class ApplicationContextConfig {
 
 		return transactionManager;
 	}
-	@Autowired
-    @Bean(name = "genreDao")
-    public GenreDAO genreDao(SessionFactory sessionFactory) {
-    	return new GenreDAOImpl(sessionFactory);
-    }
-  
+   
 
 }

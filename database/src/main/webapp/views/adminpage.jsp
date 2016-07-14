@@ -11,7 +11,7 @@
 <%@include file="/includes/loggedIn.jsp" %>
 <center>
 <h1>Welcome Admin!!</h1>
-<h2><a href="genres">genres</a></h2>
+<h2><a href="books">Books</a></h2>
 <b><hr></b>
 <br><br>
 <form method="POST" action="uploadFile" enctype="multipart/form-data">
@@ -22,7 +22,7 @@
 </div>
 	</form>	
 	<br><br>
-	<b>${message} !! </b>
+	<b>${message} </b>
 <b><hr></b>
 
 </center>
