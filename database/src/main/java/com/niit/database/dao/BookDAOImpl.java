@@ -44,7 +44,7 @@ public class BookDAOImpl implements BookDAO {
 	
 	@Transactional
 	public Book get(String id){
-		String hql="from Book where id="+"'"+id+"'";
+		String hql="from Book where id="+"'"+id+"'"; //
 		Query query= sessionFactory.getCurrentSession().createQuery(hql);
 		
 		@SuppressWarnings("unchecked")
@@ -55,17 +55,6 @@ public class BookDAOImpl implements BookDAO {
 		}
 		return null;		
 	}
-
-	public Book getByName(String name) {
-		String hql = "from Book where name=" + "'" + name + "'";
-		Query query = sessionFactory.getCurrentSession().createQuery(hql);
-
-		@SuppressWarnings("unchecked")
-		List<Book> listBook = (List<Book>) query.list();
-
-		if (listBook != null && !listBook.isEmpty()) {
-			return listBook.get(0);
-		}
-		return null;
-	}
+	
+	
 }

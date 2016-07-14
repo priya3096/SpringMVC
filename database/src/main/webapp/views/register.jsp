@@ -80,7 +80,11 @@ table tr:nth-child(even) {
 				<tr>
 					<td>choose your password:</td>
 					<td><input type="password" name="password "></td>
+				</tr><tr>
+					<td>Address:</td>
+					<td><input type="text" name="address"></td>
 				</tr>
+				
 				<tr>
 					<td>
 						<button ng-click="reset()">Reset</button>
