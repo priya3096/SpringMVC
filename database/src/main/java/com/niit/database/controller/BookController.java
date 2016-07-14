@@ -16,6 +16,7 @@ import com.niit.database.model.Book;
 @Controller
 public class BookController {
 	
+	private static final Object Fiction = null;
 	private BookDAO bookDAO;
 	
 	@Autowired(required=true)
@@ -61,9 +62,57 @@ public class BookController {
 		 return "book";
 		 
 	 }
+	 @RequestMapping("/productsdisplay")
+	 public String listOfBooks(Model model){
+		 
+		 model.addAttribute("book", new Book());
+		 model.addAttribute("bookList", this.bookDAO.list());
+		 return "allBooks";
+	 }
 	 
-	 
-	 
-	
+	 @RequestMapping(value="/about")
+		public String about(){
+	        return "about";
+	    }
+	 @RequestMapping(value="/fiction")
+		public String fiction(Model model){
+		 
+		 model.addAttribute("book", new Book());
+		 model.addAttribute("bookList", this.bookDAO.list());
+		 model.addAttribute("genre", "Fiction");
+	     return "genresort";
+	    }
+	 @RequestMapping(value="/autobiography")
+		public String bio(Model model){
+		 
+		 model.addAttribute("book", new Book());
+		 model.addAttribute("bookList", this.bookDAO.list());
+		 model.addAttribute("genre", "Autobiography");
+	     return "genresort";
+	    }
+	 @RequestMapping(value="/nonfiction")
+		public String nonfiction(Model model){
+		 
+		 model.addAttribute("book", new Book());
+		 model.addAttribute("bookList", this.bookDAO.list());
+		 model.addAttribute("genre", "Non Fiction");
+	     return "genresort";
+	    }
+	 @RequestMapping(value="/fantasy")
+		public String fantasy(Model model){
+		 
+		 model.addAttribute("book", new Book());
+		 model.addAttribute("bookList", this.bookDAO.list());
+		 model.addAttribute("genre", "Fantasy");
+	     return "genresort";
+	    }
+	 @RequestMapping(value="/education")
+		public String education(Model model){
+		 
+		 model.addAttribute("book", new Book());
+		 model.addAttribute("bookList", this.bookDAO.list());
+		 model.addAttribute("genre", "Education");
+	     return "genresort";
+	    }	
 
 }
