@@ -8,7 +8,7 @@
 <%@include file="/includes/Head.jsp" %>
 </head>
 <body background="resources/images/images.jpg">
-<%@include file="/includes/loggedIn.jsp" %>
+<%@include file="/includes/Navbar.jsp" %>
 <center>
 <h1>Welcome Admin!!</h1>
 <h2><a href="books">Books</a></h2>

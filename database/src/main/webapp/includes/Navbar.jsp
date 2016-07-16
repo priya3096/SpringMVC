@@ -1,4 +1,4 @@
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!-- Navigation -->
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
@@ -28,11 +28,17 @@
 							
 						</ul></li>
 					<li><a href="productsdisplay">All Books</a></li>
-
+					
+					<c:if test="${pageContext.request.userPrincipal.name == null}">
 					<li><div style="color: red">${message}</div><br><form action="isValidUser" method="post">
 							<input type="text" name="name" placeholder="UserId">
 							<input type="password" name="password" placeholder="Password">
 							<button class="btn btn-primary">LOG IN</button></form></li>
+					</c:if>
+					<c:if test="${pageContext.request.userPrincipal.name != null}">
+						<li style="color:yellow">Admin LoggedIn</li><br>
+						<li><a class="btn btn-primary" href="index.jsp">LogOut</a></li>
+					</c:if>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->

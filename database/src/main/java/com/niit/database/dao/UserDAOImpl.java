@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.database.model.User;
+import com.niit.database.model.UserDetails;
 
 @Repository("userDAO")
 public class UserDAOImpl implements UserDAO {
@@ -74,6 +75,11 @@ public class UserDAOImpl implements UserDAO {
 		}
 		
 		return false;
+	}
+
+	public void saveOrUpdate(UserDetails userDetails) {
+		sessionFactory.getCurrentSession().saveOrUpdate(userDetails);
+		
 	}
 
 
